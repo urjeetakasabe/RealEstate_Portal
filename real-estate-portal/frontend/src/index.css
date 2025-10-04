@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Real Estate Portal - Sage Green & Beige Theme */
+    --background: 60 56% 91%; /* Warm beige background */
+    --foreground: 95 15% 25%; /* Dark sage for text */
+
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 95 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 95 15% 25%;
+
+    --primary: 95 22% 61%; /* Sage green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 60 45% 85%; /* Light beige */
+    --secondary-foreground: 95 15% 25%;
+
+    --muted: 60 30% 88%;
+    --muted-foreground: 95 10% 45%;
+
+    --accent: 95 30% 55%; /* Deeper sage */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 95 15% 80%;
+    --input: 0 0% 100%;
+    --ring: 95 22% 61%;
+
+    --radius: 0.75rem;
+    
+    /* Custom shadows for elevation */
+    --shadow-sm: 0 2px 8px rgba(156, 175, 136, 0.08);
+    --shadow-md: 0 4px 16px rgba(156, 175, 136, 0.12);
+    --shadow-lg: 0 8px 24px rgba(156, 175, 136, 0.16);
+    
+    /* Sidebar specific */
+    --sidebar-sage: 95 25% 55%;
+    --sidebar-sage-light: 95 25% 65%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 95 15% 15%;
+    --foreground: 60 56% 91%;
+
+    --card: 95 15% 20%;
+    --card-foreground: 60 56% 91%;
+
+    --popover: 95 15% 20%;
+    --popover-foreground: 60 56% 91%;
+
+    --primary: 95 22% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 95 15% 25%;
+    --secondary-foreground: 60 56% 91%;
+
+    --muted: 95 15% 25%;
+    --muted-foreground: 60 30% 70%;
+
+    --accent: 95 25% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 95 15% 30%;
+    --input: 95 15% 25%;
+    --ring: 95 22% 61%;
+    
+    --sidebar-sage: 95 25% 50%;
+    --sidebar-sage-light: 95 25% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Custom component classes can be added here */
+  .shadow-sage-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-sage-md {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-sage-lg {
+    box-shadow: var(--shadow-lg);
+  }
+}
